@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <!-- Primary theme color matching the dark scheme -->
+  <meta name="theme-color" content="#0B0B0B" />
+  <title>أكاديمية عايد | دورات STEP 2026 المكثفة والشاملة</title>
+  <meta name="description" content="منصة أكاديمية عايد لدورات STEP الشاملة والمكثفة لعام 2026 — تسجيل رسمي، خطة مذاكرة، تدريبات ونماذج، دعم فني، وخصائص PWA" />
+  <!-- Tailwind CDN for rapid utility styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- PWA manifest -->
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body class="text-white antialiased">
+  <!-- Watermark overlay (decorative) -->
+  <div class="wm"></div>
+
+  <!-- Top announcement bar with discount and actions -->
+  <div class="relative z-50">
+    <div class="bg-[#0f0f0f] border-b border-white/10">
+      <div class="max-w-6xl mx-auto px-4 py-2 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+        <div class="text-sm text-white/90">
+          🚨 <span class="text-[var(--yellow)] font-bold">خصم التسجيل الحالي:</span>
+          <span class="font-semibold">299 ريال</span>
+          <span class="text-white/70">بدل</span>
+          <span class="line-through text-white/60">449 ريال</span>
+          <span class="text-white/70">— ينتهي</span>
+          <span class="font-semibold">29/01/2026</span>
+          <span class="text-white/70">وبعدها نقفل على عدد محدد ونفتح بسعره الرسمي.</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm">
+          <a href="#register" class="px-3 py-1.5 rounded-full bg-[var(--yellow)] text-black font-bold hover:opacity-90 transition">
+            سجّل الآن
+          </a>
+          <a href="https://t.me/Ayed_Academy_2026" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-full border border-white/15 hover:border-white/25 transition text-white/90">
+            تواصل مع الحساب الرسمي
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sticky header / navigation bar -->
+    <header class="sticky top-0 z-50 bg-[#0b0b0b]/85 backdrop-blur border-b border-white/10">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+        <!-- Logo and site title -->
+        <div class="flex items-center gap-3 min-w-0">
+          <div class="w-10 h-10 rounded-2xl bg-[var(--yellow)]/15 border border-[var(--yellow)]/35 grid place-items-center">
+            <span class="font-extrabold text-[var(--yellow)]">A</span>
+          </div>
+          <div class="min-w-0">
+            <div class="font-extrabold leading-tight truncate">أكاديمية عايد</div>
+            <div class="text-xs text-white/60 truncate">دورات STEP 2026 المكثفة والشاملة</div>
+          </div>
+        </div>
+        <!-- Desktop navigation links -->
+        <nav class="hidden lg:flex items-center gap-1 text-sm">
+          <a class="px-3 py-2 rounded-xl hover:bg-white/5 text-white/80" href="#toc">المحتويات</a>
+          <a class="px-3 py-2 rounded-xl hover:bg-white/5 text-white/80" href="#about">عن الدورة</a>
+          <a class="px-3 py-2 rounded-xl hover:bg-white/5 text-white/80" href="#includes">وش تحصل؟</a>
+          <a class="px-3 py-2 rounded-xl hover:bg-white/5 text-white/80" href="#plans">خطط المذاكرة</a>
+          <a class="px-3 py-2 rounded-xl hover:bg-white/5 text-white/80" href="#pricing">السعر والدفع</a>
+          <a class="px-3 py-2 rounded-xl hover:bg-white/5 text-white/80" href="#steps">خطوات التسجيل</a>
+          <a class="px-3 py-2 rounded-xl hover:bg-white/5 text-white/80" href="#register">نموذج التسجيل</a>
+          <a class="px-3 py-2 rounded-xl hover:bg-white/5 text-white/80" href="#faq">الأسئلة الشائعة</a>
+        </nav>
+        <!-- Mobile menu button and call to action -->
+        <div class="flex items-center gap-2">
+          <button id="menuBtn" class="lg:hidden px-3 py-2 rounded-xl border border-white/15 hover:border-white/25 transition text-white/90">
+            ☰ القائمة
+          </button>
+          <a href="#register" class="hidden sm:inline-flex px-3 py-2 rounded-xl bg-[var(--yellow)] text-black font-extrabold hover:opacity-90 transition">
+            ابدأ التسجيل
+          </a>
+        </div>
+      </div>
+      <!-- Mobile menu dropdown -->
+      <div id="mobileMenu" class="lg:hidden hidden border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-4 py-3 grid gap-2 text-sm">
+          <a class="px-3 py-2 rounded-xl hover:bg-white/5 text-white/80" href="#toc">المحتويات</a>
+          <a class="px-3 py-2 rounded-xl hover:bg-white/5 text-white/80" href="#about">عن الدورة</a>
+          <a class="px-3 py-2 rounded-xl hover:bg-white/5 text-white/80" href="#includes">وش تحصل؟</a>
+          <a class="px-3 py-2 rounded-xl hover:bg-white/5 text-white/80" href="#plans">خطط المذاكرة</a>
+          <a class="px-3 py-2 rounded-xl hover:bg-white/5 text-white/80" href="#pricing">السعر والدفع</a>
+          <a class="px-3 py-2 rounded-xl hover:bg-white/5 text-white/80" href="#steps">خطوات التسجيل</a>
+          <a class="px-3 py-2 rounded-xl hover:bg-white/5 text-white/80" href="#register">نموذج التسجيل</a>
+          <a class="px-3 py-2 rounded-xl hover:bg-white/5 text-white/80" href="#faq">الأسئلة الشائعة</a>
+          <div class="pt-2 flex gap-2">
+            <a href="#register" class="flex-1 text-center px-3 py-2 rounded-xl bg-[var(--yellow)] text-black font-extrabold">سجّل الآن</a>
+            <a href="https://t.me/Ayed_Academy_2026" target="_blank" rel="noopener" class="flex-1 text-center px-3 py-2 rounded-xl border border-white/15 text-white/90">تواصل</a>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Main content wrapper -->
+  <main class="relative z-10">
+    <!-- Hero / Overview section with intro and countdown -->
+    <section class="grid-bg">
+      <div class="max-w-6xl mx-auto px-4 pt-10 pb-10">
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <!-- Left column: intro text -->
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-sm text-white/80">
+              <span class="pulse-dot"></span>
+              تسجيل رسمي — دفع بتحويل بنكي + نموذج بإرفاق الإيصال
+            </div>
+            <h1 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+              دورات <span class="text-[var(--yellow)]">STEP المكثفة والشاملة 2026</span><br />
+              خطة منظمة… ونتيجة أسرع بإذن الله ✅
+            </h1>
+            <p class="mt-4 text-white/75 leading-relaxed">
+              إذا كان اختبارك قريب أو تشتت من تعدد المصادر… هنا نعطيك طريق واضح: شرح مركز + تدريبات على النمط المتكرر + خطة مذاكرة مرنة
+              — وتدخل للقنوات بعد <span class="font-bold text-white">تأكيد الإيصال</span>.
+            </p>
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+              <a href="#register" class="px-4 py-3 rounded-2xl bg-[var(--yellow)] text-black font-extrabold text-center hover:opacity-90 transition">
+                ✅ ابدأ التسجيل الآن
+              </a>
+              <a href="#pricing" class="px-4 py-3 rounded-2xl border border-white/15 text-white/90 text-center hover:border-white/25 transition">
+                💳 تفاصيل الدفع
+              </a>
+              <a href="https://t.me/Academy_Ayed_2026" target="_blank" rel="noopener"
+                 class="px-4 py-3 rounded-2xl border border-white/15 text-white/90 text-center hover:border-white/25 transition">
+                📢 قروب التنبيهات
+              </a>
+            </div>
+            <!-- Countdown box -->
+            <div class="mt-7 p-4 rounded-2xl bg-[#111]/80 border border-white/10">
+              <div class="flex items-start sm:items-center justify-between gap-3 flex-col sm:flex-row">
+                <div>
+                  <div class="text-sm text-white/70">⏳ ينتهي الخصم / يقفل التسجيل على عدد محدد خلال:</div>
+                  <div class="text-xs text-white/55 mt-1">الموعد النهائي: <span class="font-semibold text-white/80">29/01/2026</span></div>
+                </div>
+                <div class="flex gap-2 text-center" id="countdown">
+                  <div class="px-3 py-2 rounded-xl bg-black/40 border border-white/10 min-w-[72px]">
+                    <div class="text-2xl font-extrabold" id="cdDays">--</div>
+                    <div class="text-xs text-white/60">يوم</div>
+                  </div>
+                  <div class="px-3 py-2 rounded-xl bg-black/40 border border-white/10 min-w-[72px]">
+                    <div class="text-2xl font-extrabold" id="cdHours">--</div>
+                    <div class="text-xs text-white/60">ساعة</div>
+                  </div>
+                  <div class="px-3 py-2 rounded-xl bg-black/40 border border-white/10 min-w-[72px]">
+                    <div class="text-2xl font-extrabold" id="cdMins">--</div>
+                    <div class="text-xs text-white/60">دقيقة</div>
+                  </div>
+                  <div class="px-3 py-2 rounded-xl bg-black/40 border border-white/10 min-w-[72px]">
+                    <div class="text-2xl font-extrabold" id="cdSecs">--</div>
+                    <div class="text-xs text-white/60">ثانية</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Quick stats -->
+            <div class="mt-5 grid sm:grid-cols-3 gap-3">
+              <div class="p-4 rounded-2xl bg-[#111]/70 border border-white/10">
+                <div class="text-sm text-white/70">🗓️ مدة الوصول</div>
+                <div class="text-lg font-extrabold mt-1">90 يوم</div>
+              </div>
+              <div class="p-4 rounded-2xl bg-[#111]/70 border border-white/10">
+                <div class="text-sm text-white/70">📌 مناسب لـ</div>
+                <div class="text-lg font-extrabold mt-1">اختبار قريب</div>
+              </div>
+              <div class="p-4 rounded-2xl bg-[#111]/70 border border-white/10">
+                <div class="text-sm text-white/70">🧑‍💻 دعم</div>
+                <div class="text-lg font-extrabold mt-1">متابعة فنية</div>
+              </div>
+            </div>
+          </div>
+          <!-- Right column: price card -->
+          <div class="bg-[#111]/80 border border-white/10 rounded-3xl p-6">
+            <div class="flex items-center justify-between gap-3">
+              <div>
+                <div class="text-sm text-white/70">السعر الحالي</div>
+                <div class="text-3xl font-extrabold mt-1">
+                  299 <span class="text-base font-bold text-white/70">ريال</span>
+                </div>
+                <div class="text-sm text-white/60 mt-1">بعد 29/01/2026 يرجع للسعر الرسمي <span class="font-bold">449</span> ريال.</div>
+              </div>
+              <div class="w-16 h-16 rounded-2xl bg-[var(--yellow)]/15 border border-[var(--yellow)]/30 grid place-items-center">
+                <span class="text-2xl">⚡</span>
+              </div>
+            </div>
+            <div class="mt-6 space-y-3">
+              <div class="flex items-start gap-3">
+                <div class="mt-1 text-[var(--yellow)]">✔</div>
+                <div>
+                  <div class="font-bold">شرح مسجل + تطبيق</div>
+                  <div class="text-sm text-white/65">ما فيه تشتيت… خطوات واضحة من البداية للنهاية.</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="mt-1 text-[var(--yellow)]">✔</div>
+                <div>
+                  <div class="font-bold">نماذج وتدريبات مركزة</div>
+                  <div class="text-sm text-white/65">تدريب على الأسئلة المتكررة وأساليب الحل.</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="mt-1 text-[var(--yellow)]">✔</div>
+                <div>
+                  <div class="font-bold">خطة مذاكرة جاهزة</div>
+                  <div class="text-sm text-white/65">7 أيام / 14 يوم / 30 يوم + خيار 15 يوم حسب وقتك.</div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+              <a href="#pricing" class="flex-1 px-4 py-3 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition text-center font-bold">
+                شوف طريقة الدفع
+              </a>
+              <a href="#register" class="flex-1 px-4 py-3 rounded-2xl bg-[var(--yellow)] text-black font-extrabold text-center hover:opacity-90 transition">
+                ابدأ التسجيل
+              </a>
+            </div>
+            <div class="mt-4 text-xs text-white/55 leading-relaxed">
+              ملاحظة: دخول القنوات الخاصة بالدورة يتم بعد <span class="text-white/80 font-semibold">تأكيد الإيصال</span> من الحساب الرسمي.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Table of contents section for easy navigation -->
+    <section id="toc" class="max-w-6xl mx-auto px-4 py-10">
+      <div class="rounded-3xl bg-[#111]/70 border border-white/10 p-6">
+        <div class="flex items-center justify-between gap-3 flex-col sm:flex-row">
+          <div>
+            <h2 class="text-2xl font-extrabold">🧭 قائمة المحتويات</h2>
+            <p class="text-white/65 mt-2">رتّبناها لك عشان ما تتوه — كل قسم فيه زر يودّيك للي بعده.</p>
+          </div>
+          <a href="#register" class="px-4 py-2.5 rounded-2xl bg-[var(--yellow)] text-black font-extrabold hover:opacity-90 transition">
+            سجّل الآن
+          </a>
+        </div>
+        <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
+          <a class="p-4 rounded-2xl bg-black/40 border border-white/10 hover:border-white/20 transition" href="#about">1) عن الدورة ولمين تناسب</a>
+          <a class="p-4 rounded-2xl bg-black/40 border border-white/10 hover:border-white/20 transition" href="#includes">2) ماذا يشملك الاشتراك؟</a>
+          <a class="p-4 rounded-2xl bg-black/40 border border-white/10 hover:border-white/20 transition" href="#plans">3) خطط المذاكرة (7/14/30/15)</a>
+          <a class="p-4 rounded-2xl bg-black/40 border border-white/10 hover:border-white/20 transition" href="#pricing">4) السعر + التحويل + Copy</a>
+          <a class="p-4 rounded-2xl bg-black/40 border border-white/10 hover:border-white/20 transition" href="#steps">5) خطوات التسجيل</a>
+          <a class="p-4 rounded-2xl bg-black/40 border border-white/10 hover:border-white/20 transition" href="#register">6) نموذج التسجيل</a>
+          <a class="p-4 rounded-2xl bg-black/40 border border-white/10 hover:border-white/20 transition" href="#reviews">7) آراء الطلاب</a>
+          <a class="p-4 rounded-2xl bg-black/40 border border-white/10 hover:border-white/20 transition" href="#faq">8) الأسئلة الشائعة</a>
+          <a class="p-4 rounded-2xl bg-black/40 border border-white/10 hover:border-white/20 transition" href="#free">9) قروب التنبيهات + البوت المجاني</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about" class="max-w-6xl mx-auto px-4 pb-12">
+      <div class="grid lg:grid-cols-2 gap-6 items-start">
+        <!-- Course description -->
+        <div class="rounded-3xl bg-[#111]/70 border border-white/10 p-6">
+          <h2 class="text-2xl font-extrabold">عن دورات STEP المكثفة والشاملة 2026</h2>
+          <p class="mt-3 text-white/75 leading-relaxed">
+            هذه الدورات موجهة للطلاب والطالبات الراغبين في تحسين نتائجهم بسرعة مع محتوى منظم.
+            تشمل شرحًا مركّزًا للمهارات الأساسية (Grammar، Reading، Listening) مع تدريبات على النمط المتكرر، وخطط مذاكرة مرنة حسب وقت الطالب.
+          </p>
+          <div class="mt-5 space-y-3 text-sm text-white/70">
+            <div class="flex items-start gap-3">
+              <span class="text-[var(--yellow)] font-bold">•</span>
+              <span>مناسبة لمن يختبر قريبًا ويريد خطوات جاهزة بدل ضياع الوقت بين مصادر متعددة.</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-[var(--yellow)] font-bold">•</span>
+              <span>مفيدة لمن يهدف إلى رفع الدرجة في فترة قصيرة مع تدريب مستمر وقياس تقدّم.</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-[var(--yellow)] font-bold">•</span>
+              <span>شاملة للمحتوى، لكنها مركّزة — نبتعد عن الحشو ونلتزم بما يرفع النتيجة.</span>
+            </div>
+          </div>
+          <div class="mt-6 flex gap-3 flex-col sm:flex-row">
+            <a href="#includes" class="flex-1 px-4 py-3 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition text-center font-bold">
+              التالي: ماذا ستحصل؟
+            </a>
+            <a href="#register" class="flex-1 px-4 py-3 rounded-2xl bg-[var(--yellow)] text-black font-extrabold text-center hover:opacity-90 transition">
+              سجّل الآن
+            </a>
+          </div>
+        </div>
+        <!-- Why the course is intensive -->
+        <div class="rounded-3xl bg-[#111]/70 border border-white/10 p-6">
+          <h3 class="text-xl font-extrabold">لماذا تُعتبر مكثفة؟</h3>
+          <div class="mt-4 grid gap-3">
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/10">
+              <div class="font-bold">🎯 هدف واضح</div>
+              <div class="text-sm text-white/65 mt-1">نركز على ما يرفع الدرجة فعلاً… بدون تشتت.</div>
+            </div>
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/10">
+              <div class="font-bold">🧩 تنظيم ومتابعة</div>
+              <div class="text-sm text-white/65 mt-1">محتوى مرتب + خطة مذاكرة + دعم فني خلال مدة الاشتراك.</div>
+            </div>
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/10">
+              <div class="font-bold">⚡ تدريب على النمط</div>
+              <div class="text-sm text-white/65 mt-1">نماذج وتدريبات تعودك على صيغة الأسئلة وطريقة الحل.</div>
+            </div>
+          </div>
+          <div class="mt-6 flex gap-3 flex-col sm:flex-row">
+            <a href="#plans" class="flex-1 px-4 py-3 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition text-center font-bold">
+              التالي: خطط المذاكرة
+            </a>
+            <a href="#pricing" class="flex-1 px-4 py-3 rounded-2xl bg-[var(--yellow)] text-black font-extrabold text-center hover:opacity-90 transition">
+              التالي: السعر والدفع
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Includes section -->
+    <section id="includes" class="max-w-6xl mx-auto px-4 pb-12">
+      <div class="rounded-3xl bg-[#111]/70 border border-white/10 p-6">
+        <h2 class="text-2xl font-extrabold">ماذا ستحصل عند اشتراكك؟</h2>
+        <p class="mt-2 text-white/65">مختصر مفيد… لكن قوي 💪</p>
+        <div class="mt-6 grid md:grid-cols-3 gap-4">
+          <div class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="text-2xl">🧠</div>
+            <div class="mt-2 font-extrabold">Grammar</div>
+            <ul class="mt-2 text-sm text-white/70 space-y-2">
+              <li>• قواعد مهمة ومتكررة في الاختبار</li>
+              <li>• أمثلة عملية وتلخيصات مباشرة</li>
+              <li>• مراجعات تساعدك تثبت المعلومة</li>
+            </ul>
+          </div>
+          <div class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="text-2xl">📖</div>
+            <div class="mt-2 font-extrabold">Reading</div>
+            <ul class="mt-2 text-sm text-white/70 space-y-2">
+              <li>• استراتيجيات استخراج الفكرة بسرعة</li>
+              <li>• تدريب على نصوص متنوعة</li>
+              <li>• نماذج + حلول مركزة</li>
+            </ul>
+          </div>
+          <div class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="text-2xl">🎧</div>
+            <div class="mt-2 font-extrabold">Listening</div>
+            <ul class="mt-2 text-sm text-white/70 space-y-2">
+              <li>• تدريبات استماع واقعية</li>
+              <li>• طرق رصد الفكرة الأساسية بسرعة</li>
+              <li>• روتين يومي بسيط وفعّال</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div class="p-4 rounded-2xl bg-black/40 border border-white/10">
+            <div class="font-bold">★ خطة مذاكرة حسب وقتك</div>
+            <div class="text-sm text-white/65 mt-1">اختر المسار المناسب لظروفك.</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-black/40 border border-white/10">
+            <div class="font-bold">📚 محتوى مسجّل بوقت مرن</div>
+            <div class="text-sm text-white/65 mt-1">تذاكر متى ما يناسبك.</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-black/40 border border-white/10">
+            <div class="font-bold">📄 ملفات ونماذج PDF</div>
+            <div class="text-sm text-white/65 mt-1">ترتيب يساعدك تراجع بسرعة.</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-black/40 border border-white/10">
+            <div class="font-bold">📞 دعم فني سريع</div>
+            <div class="text-sm text-white/65 mt-1">خلال مدة الاشتراك.</div>
+          </div>
+        </div>
+        <div class="mt-6 flex gap-3 flex-col sm:flex-row">
+          <a href="#plans" class="flex-1 px-4 py-3 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition text-center font-bold">
+            التالي: خطط المذاكرة
+          </a>
+          <a href="#register" class="flex-1 px-4 py-3 rounded-2xl bg-[var(--yellow)] text-black font-extrabold text-center hover:opacity-90 transition">
+            سجّل الآن
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plans section -->
+    <section id="plans" class="max-w-6xl mx-auto px-4 pb-12">
+      <div class="rounded-3xl bg-[#111]/70 border border-white/10 p-6">
+        <div class="flex items-start justify-between gap-3 flex-col lg:flex-row">
+          <div>
+            <h2 class="text-2xl font-extrabold">اختر خطة المذاكرة التي تناسبك</h2>
+            <p class="mt-2 text-white/65">3 مسارات مرنة + خيار “15 يوم” (مناسب لمن اختبارهم قريب).</p>
+          </div>
+          <a href="#register" class="px-4 py-2.5 rounded-2xl bg-[var(--yellow)] text-black font-extrabold hover:opacity-90 transition">
+            ابدأ التسجيل
+          </a>
+        </div>
+        <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="text-sm text-white/60">مسار</div>
+            <div class="text-xl font-extrabold mt-1">7 أيام ⚡</div>
+            <ul class="mt-3 text-sm text-white/70 space-y-2">
+              <li>• قراءة مكثفة يومياً</li>
+              <li>• قواعد أهم النقاط</li>
+              <li>• استماع قصير يومي</li>
+              <li>• اختبار محاكي سريع</li>
+            </ul>
+          </div>
+          <div class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="text-sm text-white/60">مسار</div>
+            <div class="text-xl font-extrabold mt-1">14 يوم 🔥</div>
+            <ul class="mt-3 text-sm text-white/70 space-y-2">
+              <li>• جدول مراجعة سلس</li>
+              <li>• توزيع مهارات واضح</li>
+              <li>• استماع يومي</li>
+              <li>• اختبار منتصف + نهائي</li>
+            </ul>
+          </div>
+          <div class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="text-sm text-white/60">مسار</div>
+            <div class="text-xl font-extrabold mt-1">30 يوم ✅</div>
+            <ul class="mt-3 text-sm text-white/70 space-y-2">
+              <li>• تدرج بدون توتر</li>
+              <li>• تركيز على التكرار</li>
+              <li>• مراجعات دورية</li>
+              <li>• محاكي شامل بالنهاية</li>
+            </ul>
+          </div>
+          <div class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="text-sm text-white/60">خيار</div>
+            <div class="text-xl font-extrabold mt-1">15 يوم 🎯</div>
+            <ul class="mt-3 text-sm text-white/70 space-y-2">
+              <li>• مناسب لمن اختبارهم قريب</li>
+              <li>• يومياً: Grammar + Reading + Listening</li>
+              <li>• مراجعة + تدريب على النماذج</li>
+              <li>• تثبيت الأخطاء قبل الاختبار</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-6 p-5 rounded-2xl bg-black/40 border border-white/10">
+          <div class="font-extrabold">طريقة المذاكرة المقترحة</div>
+          <div class="mt-3 grid lg:grid-cols-3 gap-4 text-sm text-white/70">
+            <div>
+              <div class="font-bold text-white">🔵 Grammar</div>
+              <ol class="mt-2 space-y-1 list-decimal pr-5">
+                <li>تأسيس سريع</li>
+                <li>تطبيق على النماذج</li>
+                <li>مراجعة + كويزات</li>
+              </ol>
+            </div>
+            <div>
+              <div class="font-bold text-white">🟣 Reading</div>
+              <ol class="mt-2 space-y-1 list-decimal pr-5">
+                <li>استراتيجيات القراءة</li>
+                <li>نماذج + حلول</li>
+                <li>مراجعة أخطاءك</li>
+              </ol>
+            </div>
+            <div>
+              <div class="font-bold text-white">⚪️ Listening</div>
+              <ol class="mt-2 space-y-1 list-decimal pr-5">
+                <li>استراتيجيات الاستماع</li>
+                <li>تجميعات/نماذج</li>
+                <li>كويزات وتثبيت الأسئلة</li>
+              </ol>
+            </div>
+          </div>
+          <div class="mt-3 text-xs text-white/55">
+            ملاحظة: آخر النماذج تحدّث باستمرار حسب النمط المتداول — هدفنا نخليك جاهز للنموذج الأحدث.
+          </div>
+        </div>
+        <div class="mt-6 flex gap-3 flex-col sm:flex-row">
+          <a href="#pricing" class="flex-1 px-4 py-3 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition text-center font-bold">
+            التالي: السعر والدفع
+          </a>
+          <a href="#register" class="flex-1 px-4 py-3 rounded-2xl bg-[var(--yellow)] text-black font-extrabold text-center hover:opacity-90 transition">
+            التالي: نموذج التسجيل
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing & Payment section -->
+    <section id="pricing" class="max-w-6xl mx-auto px-4 pb-12">
+      <div class="grid lg:grid-cols-2 gap-6">
+        <!-- Payment details -->
+        <div class="rounded-3xl bg-[#111]/70 border border-white/10 p-6">
+          <h2 class="text-2xl font-extrabold">السعر وطريقة الدفع</h2>
+          <p class="mt-2 text-white/65">
+            السعر الحالي <span class="font-extrabold text-white">299 ريال</span> ✅
+            <span class="text-white/60">— بعد 29/01/2026 يرجع للسعر الرسمي 449 ريال.</span>
+          </p>
+          <div class="mt-6 p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="flex items-center justify-between gap-3">
+              <div class="font-extrabold">بيانات التحويل البنكي الرسمية</div>
+              <span class="text-xs px-2 py-1 rounded-full bg-white/5 border border-white/10 text-white/70">موثّق</span>
+            </div>
+            <div class="mt-4 grid gap-3 text-sm">
+              <div class="flex items-start justify-between gap-3 p-3 rounded-xl border border-white/10 bg-[#0b0b0b]/60">
+                <div>
+                  <div class="text-white/60">🟢 البنك</div>
+                  <div class="font-bold">بنك الإنماء</div>
+                </div>
+                <button class="copyBtn px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition"
+                        data-copy="بنك الإنماء">Copy</button>
+              </div>
+              <div class="flex items-start justify-between gap-3 p-3 rounded-xl border border-white/10 bg-[#0b0b0b]/60">
+                <div class="min-w-0">
+                  <div class="text-white/60">🏦 رقم الحساب</div>
+                  <div class="font-bold break-all" id="acc">68206067557000</div>
+                </div>
+                <button class="copyBtn px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition"
+                        data-copy="68206067557000">Copy</button>
+              </div>
+              <div class="flex items-start justify-between gap-3 p-3 rounded-xl border border-white/10 bg-[#0b0b0b]/60">
+                <div class="min-w-0">
+                  <div class="text-white/60">🏦 الآيبان</div>
+                  <div class="font-bold break-all" id="iban">SA4905000068206067557000</div>
+                </div>
+                <button class="copyBtn px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition"
+                        data-copy="SA4905000068206067557000">Copy</button>
+              </div>
+              <div class="flex items-start justify-between gap-3 p-3 rounded-xl border border-white/10 bg-[#0b0b0b]/60">
+                <div class="min-w-0">
+                  <div class="text-white/60">👤 اسم المستفيد</div>
+                  <div class="font-bold break-all" id="benef">مؤسسة كريتيفا جلوبال لتقنية المعلومات</div>
+                </div>
+                <button class="copyBtn px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition"
+                        data-copy="مؤسسة كريتيفا جلوبال لتقنية المعلومات">Copy</button>
+              </div>
+              <div class="flex items-start justify-between gap-3 p-3 rounded-xl border border-white/10 bg-[#0b0b0b]/60">
+                <div class="min-w-0">
+                  <div class="text-white/60">📝 غرض التحويل (ضروري)</div>
+                  <div class="font-bold break-all" id="purpose">مشتريات دورة STEP المكثفة – منصة عايد الرسمية</div>
+                </div>
+                <button class="copyBtn px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition"
+                        data-copy="مشتريات دورة STEP المكثفة – منصة عايد الرسمية">Copy</button>
+              </div>
+            </div>
+            <div class="mt-4 text-xs text-white/55 leading-relaxed">
+              ⚠️ تنبيه مهم: أي تحويل خارج البيانات أعلاه غير معتمد. ولا يتم اعتماد التسجيل إلا بعد وصول الإيصال.
+            </div>
+          </div>
+          <div class="mt-6 flex gap-3 flex-col sm:flex-row">
+            <a href="#steps" class="flex-1 px-4 py-3 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition text-center font-bold">
+              التالي: خطوات التسجيل
+            </a>
+            <a href="#register" class="flex-1 px-4 py-3 rounded-2xl bg-[var(--yellow)] text-black font-extrabold text-center hover:opacity-90 transition">
+              التالي: نموذج التسجيل
+            </a>
+          </div>
+        </div>
+        <!-- Side content explaining process after payment -->
+        <div class="rounded-3xl bg-[#111]/70 border border-white/10 p-6">
+          <h3 class="text-xl font-extrabold">ماذا يحدث بعد التحويل؟</h3>
+          <p class="mt-2 text-white/65">
+            باختصار: حوّل → ارفع الإيصال في النموذج → نحضّر لك رسالة → تفتح محادثة الحساب الرسمي وترسلها مع الإيصال.
+          </p>
+          <div class="mt-5 grid gap-3">
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/10">
+              <div class="font-bold">✅ اعتماد سريع</div>
+              <div class="text-sm text-white/65 mt-1">إذا كانت بياناتك كاملة والإيصال واضح… يتم التفعيل سريعاً.</div>
+            </div>
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/10">
+              <div class="font-bold">🔐 دخول القنوات الخاصة</div>
+              <div class="text-sm text-white/65 mt-1">روابط القنوات تُرسل لك من الحساب الرسمي بعد التأكيد.</div>
+            </div>
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/10">
+              <div class="font-bold">📌 ملف البداية</div>
+              <div class="text-sm text-white/65 mt-1">يصلك ملف البداية وتوصيات خطة المذاكرة المناسبة لك.</div>
+            </div>
+          </div>
+          <div class="mt-6 p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="font-extrabold">📩 الحساب الرسمي للاستفسار والاشتراك</div>
+            <div class="mt-2 text-sm text-white/70">
+              تيليجرام: <a class="text-[var(--yellow)] font-bold" href="https://t.me/Ayed_Academy_2026" target="_blank" rel="noopener">@Ayed_Academy_2026</a>
+            </div>
+          </div>
+          <div class="mt-6 flex gap-3 flex-col sm:flex-row">
+            <a href="#register" class="flex-1 px-4 py-3 rounded-2xl bg-[var(--yellow)] text-black font-extrabold text-center hover:opacity-90 transition">
+              ابدأ التسجيل الآن
+            </a>
+            <a href="#free" class="flex-1 px-4 py-3 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition text-center font-bold">
+              قروب التنبيهات + البوت المجاني
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Steps section -->
+    <section id="steps" class="max-w-6xl mx-auto px-4 pb-12">
+      <div class="rounded-3xl bg-[#111]/70 border border-white/10 p-6">
+        <h2 class="text-2xl font-extrabold">خطوات التسجيل السريعة</h2>
+        <div class="mt-6 grid md:grid-cols-4 gap-4">
+          <div class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="text-2xl">1️⃣</div>
+            <div class="mt-2 font-extrabold">حوّل 299 ريال</div>
+            <div class="text-sm text-white/65 mt-1">حسب البيانات الرسمية أعلاه.</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="text-2xl">2️⃣</div>
+            <div class="mt-2 font-extrabold">ارفع الإيصال في النموذج</div>
+            <div class="text-sm text-white/65 mt-1">الإيصال إلزامي (صورة/‏PDF).</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="text-2xl">3️⃣</div>
+            <div class="mt-2 font-extrabold">نحضّر لك رسالة جاهزة</div>
+            <div class="text-sm text-white/65 mt-1">تفتح الحساب الرسمي وترسلها.</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="text-2xl">4️⃣</div>
+            <div class="mt-2 font-extrabold">أرسل الرسالة + الإيصال مرة ثانية</div>
+            <div class="text-sm text-white/65 mt-1">بعدها يتم التفعيل وإرسال روابط القنوات الخاصة.</div>
+          </div>
+        </div>
+        <div class="mt-6 flex gap-3 flex-col sm:flex-row">
+          <a href="#register" class="flex-1 px-4 py-3 rounded-2xl bg-[var(--yellow)] text-black font-extrabold text-center hover:opacity-90 transition">
+            التالي: نموذج التسجيل
+          </a>
+          <a href="#faq" class="flex-1 px-4 py-3 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition text-center font-bold">
+            التالي: الأسئلة الشائعة
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration form section -->
+    <section id="register" class="max-w-6xl mx-auto px-4 pb-12">
+      <div class="grid lg:grid-cols-2 gap-6">
+        <!-- Form container -->
+        <div class="rounded-3xl bg-[#111]/70 border border-white/10 p-6">
+          <h2 class="text-2xl font-extrabold">نموذج التسجيل الرسمي</h2>
+          <p class="mt-2 text-white/65">عبّ بياناتك… وبعدها نحضر لك رسالة جاهزة للحساب الرسمي ✅</p>
+          <form id="enrollForm" class="mt-6 space-y-4">
+            <div>
+              <label class="text-sm text-white/70">الاسم الثلاثي <span class="text-[var(--yellow)]">*</span></label>
+              <input id="fullName" class="mt-2 w-full px-4 py-3 rounded-2xl bg-black/40 border border-white/10 focus:outline-none focus:border-[var(--yellow)]/60" placeholder="مثال: محمد عبدالعزيز عايد" required />
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-sm text-white/70">وسيلة التواصل</label>
+                <select id="contactMethod" class="mt-2 w-full px-4 py-3 rounded-2xl bg-black/40 border border-white/10 focus:outline-none focus:border-[var(--yellow)]/60">
+                  <option value="telegram">تيليجرام</option>
+                  <option value="whatsapp">واتساب</option>
+                  <option value="email">إيميل</option>
+                </select>
+                <p class="text-xs text-white/55 mt-2">اختياري— لسرعة التواصل عند الحاجة.</p>
+              </div>
+              <div>
+                <label class="text-sm text-white/70">حساب/رقم التواصل (اختياري)</label>
+                <input id="contactValue" class="mt-2 w-full px-4 py-3 rounded-2xl bg-black/40 border border-white/10 focus:outline-none focus:border-[var(--yellow)]/60" placeholder="@username أو 05xxxxxxxx أو name@email.com" />
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-sm text-white/70">موعد الاختبار <span class="text-[var(--yellow)]">*</span></label>
+                <select id="examDate" required class="mt-2 w-full px-4 py-3 rounded-2xl bg-black/40 border border-white/10 focus:outline-none focus:border-[var(--yellow)]/60">
+                  <option value="">اختر</option>
+                  <option>خلال أسبوع</option>
+                  <option>خلال أسبوعين</option>
+                  <option>خلال شهر</option>
+                  <option>أبعد من شهر</option>
+                  <option>لسا ما حجزت</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-sm text-white/70">الدرجة المستهدفة (اختياري)</label>
+                <input id="targetScore" type="number" min="0" max="100" class="mt-2 w-full px-4 py-3 rounded-2xl bg-black/40 border border-white/10 focus:outline-none focus:border-[var(--yellow)]/60" placeholder="مثال: 65" />
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-sm text-white/70">هل اختبرت STEP سابقاً؟ <span class="text-[var(--yellow)]">*</span></label>
+                <select id="prevAttempt" required class="mt-2 w-full px-4 py-3 rounded-2xl bg-black/40 border border-white/10 focus:outline-none focus:border-[var(--yellow)]/60">
+                  <option value="">اختر</option>
+                  <option value="yes">نعم</option>
+                  <option value="no">لا</option>
+                </select>
+              </div>
+              <div id="prevScoreWrap" class="hidden">
+                <label class="text-sm text-white/70">درجتك السابقة (اختياري)</label>
+                <input id="prevScore" type="number" min="0" max="100" class="mt-2 w-full px-4 py-3 rounded-2xl bg-black/40 border border-white/10 focus:outline-none focus:border-[var(--yellow)]/60" placeholder="مثال: 55" />
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-sm text-white/70">سبب التسجيل <span class="text-[var(--yellow)]">*</span></label>
+                <select id="reason" required class="mt-2 w-full px-4 py-3 rounded-2xl bg-black/40 border border-white/10 focus:outline-none focus:border-[var(--yellow)]/60">
+                  <option value="">اختر</option>
+                  <option>اختبار قريب وأحتاج خطة واضحة</option>
+                  <option>أريد رفع الدرجة بسرعة</option>
+                  <option>تشتت من المصادر وأريد ترتيب</option>
+                  <option>أريد تأسيس أقوى قبل النماذج</option>
+                  <option>سبب آخر</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-sm text-white/70">ملاحظات (اختياري)</label>
+                <input id="notes" class="mt-2 w-full px-4 py-3 rounded-2xl bg-black/40 border border-white/10 focus:outline-none focus:border-[var(--yellow)]/60" placeholder="مثال: مستواي متوسط، أريد خطة 14 يوم" />
+              </div>
+            </div>
+            <div>
+              <label class="text-sm text-white/70">إرفاق إيصال الدفع (إجباري) <span class="text-[var(--yellow)]">*</span></label>
+              <input id="receipt" type="file" accept="image/*,.pdf" required class="mt-2 w-full px-4 py-3 rounded-2xl bg-black/40 border border-white/10 focus:outline-none focus:border-[var(--yellow)]/60" />
+              <p class="text-xs text-white/55 mt-2">إذا لم ترفق الإيصال، لا نستطيع اعتماد التسجيل. ارفقه هنا ثم أرسله بالخاص للحساب الرسمي.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <button type="submit" class="flex-1 px-4 py-3 rounded-2xl bg-[var(--yellow)] text-black font-extrabold hover:opacity-90 transition">
+                ✅ جهّز الرسالة وافتح تيليجرام
+              </button>
+              <a href="#pricing" class="flex-1 px-4 py-3 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition text-center font-bold">
+                رجوع لبيانات التحويل
+              </a>
+            </div>
+          </form>
+        </div>
+        <!-- Result / instructions area -->
+        <div class="rounded-3xl bg-[#111]/70 border border-white/10 p-6">
+          <h3 class="text-xl font-extrabold">بعد إرسال النموذج</h3>
+          <p class="mt-2 text-white/65">
+            سيظهر لك زر يفتح محادثة الحساب الرسمي برسالة جاهزة. بعدها:
+            <span class="text-white font-bold">ألصق الرسالة</span> + <span class="text-white font-bold">أرفق الإيصال مرة ثانية بالخاص</span>.
+          </p>
+          <div class="mt-5 p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="font-extrabold">📩 الحساب الرسمي</div>
+            <div class="mt-2 text-sm text-white/70">
+              <a class="text-[var(--yellow)] font-bold" href="https://t.me/Ayed_Academy_2026" target="_blank" rel="noopener">@Ayed_Academy_2026</a>
+            </div>
+          </div>
+          <div id="resultBox" class="mt-5 hidden">
+            <div class="p-5 rounded-2xl bg-black/40 border border-white/10">
+              <div class="flex items-center justify-between gap-2">
+                <div class="font-extrabold">✅ تم تجهيز رسالتك</div>
+                <button id="copyMsgBtn" class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition">Copy</button>
+              </div>
+              <textarea id="readyMsg" class="mt-3 w-full h-48 px-4 py-3 rounded-2xl bg-black/40 border border-white/10 text-sm text-white/85 focus:outline-none"></textarea>
+              <div class="mt-4 flex flex-col sm:flex-row gap-3">
+                <a id="openTgBtn" target="_blank" rel="noopener" class="flex-1 px-4 py-3 rounded-2xl bg-[var(--yellow)] text-black font-extrabold text-center hover:opacity-90 transition">
+                  افتح تيليجرام للحساب الرسمي
+                </a>
+                <a href="#free" class="flex-1 px-4 py-3 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition text-center font-bold">
+                  قروب التنبيهات + البوت المجاني
+                </a>
+              </div>
+              <div class="mt-3 text-xs text-white/55">
+                🔒 تذكير: ارفع الإيصال هنا (إجباري) ثم أرسله مرة ثانية بالخاص للحساب الرسمي للتفعيل.
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="font-extrabold">⭐ ملاحظة بخصوص الإشعارات المنبثقة</div>
+            <div class="text-sm text-white/65 mt-2">
+              يظهر إشعار “نشاط حديث” كشكل تمثيلي داخل الموقع ليعطي إحساس الحيوية. يمكنك تعديل الأسماء والنصوص بسهولة من الكود.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews section -->
+    <section id="reviews" class="max-w-6xl mx-auto px-4 pb-12">
+      <div class="rounded-3xl bg-[#111]/70 border border-white/10 p-6">
+        <h2 class="text-2xl font-extrabold">آراء ونتائج الطلاب (نماذج)</h2>
+        <p class="mt-2 text-white/65">استخدمها لعرض قصص النجاح — ويمكنك تحديثها بقصص حقيقية لاحقاً.</p>
+        <div class="mt-6 grid md:grid-cols-3 gap-4">
+          <div class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="font-extrabold">ريم</div>
+            <div class="text-sm text-white/70 mt-2">“ترتيب المحتوى خلاني أمشي بثقة… وارتفع مستواي بسرعة.”</div>
+            <div class="text-xs text-white/55 mt-3">📈 مثال: +12 درجة</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="font-extrabold">عبدالله</div>
+            <div class="text-sm text-white/70 mt-2">“الدعم كان سريع، وتدريب النماذج فرق معي.”</div>
+            <div class="text-xs text-white/55 mt-3">📈 مثال: +10 درجات</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="font-extrabold">سارة</div>
+            <div class="text-sm text-white/70 mt-2">“كل يوم أعرف وش أسوي… بدون توتر.”</div>
+            <div class="text-xs text-white/55 mt-3">📈 مثال: +15 درجة</div>
+          </div>
+        </div>
+        <div class="mt-6 flex gap-3 flex-col sm:flex-row">
+          <a href="#faq" class="flex-1 px-4 py-3 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition text-center font-bold">
+            التالي: الأسئلة الشائعة
+          </a>
+          <a href="#register" class="flex-1 px-4 py-3 rounded-2xl bg-[var(--yellow)] text-black font-extrabold text-center hover:opacity-90 transition">
+            سجّل الآن
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ section -->
+    <section id="faq" class="max-w-6xl mx-auto px-4 pb-12">
+      <div class="rounded-3xl bg-[#111]/70 border border-white/10 p-6">
+        <h2 class="text-2xl font-extrabold">الأسئلة الشائعة</h2>
+        <div class="mt-6 grid lg:grid-cols-2 gap-4">
+          <details class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <summary class="font-extrabold cursor-pointer">هل الدورة مناسبة إذا اختباري قريب جداً؟</summary>
+            <p class="mt-3 text-sm text-white/70">نعم — لذلك هناك مسارات قصيرة مثل 7 أو 15 يوم لتغطية الأساسيات بسرعة.</p>
+          </details>
+          <details class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <summary class="font-extrabold cursor-pointer">هل يجب إرفاق الإيصال؟</summary>
+            <p class="mt-3 text-sm text-white/70">نعم — الإيصال إلزامي في النموذج وبالخاص للحساب الرسمي.</p>
+          </details>
+          <details class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <summary class="font-extrabold cursor-pointer">متى تصلك روابط القنوات الخاصة؟</summary>
+            <p class="mt-3 text-sm text-white/70">بعد تأكيد الدفع من الحساب الرسمي لضمان دخول المشتركين فقط.</p>
+          </details>
+          <details class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <summary class="font-extrabold cursor-pointer">كم مدة الوصول للمحتوى؟</summary>
+            <p class="mt-3 text-sm text-white/70">مدة الوصول 90 يوم من تاريخ التفعيل مع دعم فني.</p>
+          </details>
+        </div>
+        <div class="mt-6 flex gap-3 flex-col sm:flex-row">
+          <a href="#free" class="flex-1 px-4 py-3 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition text-center font-bold">
+            التالي: قروب التنبيهات والبوت المجاني
+          </a>
+          <a href="#register" class="flex-1 px-4 py-3 rounded-2xl bg-[var(--yellow)] text-black font-extrabold text-center hover:opacity-90 transition">
+            سجّل الآن
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Free section with group and bot links -->
+    <section id="free" class="max-w-6xl mx-auto px-4 pb-12">
+      <div class="rounded-3xl bg-[#111]/70 border border-white/10 p-6">
+        <h2 class="text-2xl font-extrabold">🚨 لا يفوتك أي جديد</h2>
+        <p class="mt-2 text-white/65">
+          قروب التنبيهات الرسمي + بوت المحتوى المجاني (تجميعات/كويزات) — ممتاز حتى قبل الاشتراك.
+        </p>
+        <div class="mt-6 grid lg:grid-cols-3 gap-4">
+          <div class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="font-extrabold">📢 قروب التنبيهات الرسمي</div>
+            <div class="text-sm text-white/70 mt-2">
+              ✅ تحديثات المحتوى<br/>✅ عروض وخصومات<br/>✅ مواعيد وخطط مذاكرة
+            </div>
+            <a class="mt-4 inline-flex w-full justify-center px-4 py-3 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition font-bold"
+               href="https://t.me/Academy_Ayed_2026" target="_blank" rel="noopener">
+              فتح القروب
+            </a>
+          </div>
+          <div class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="font-extrabold">🤖 بوت المحتوى المجاني</div>
+            <div class="text-sm text-white/70 mt-2">
+              تجميعات، كويزات، منصة عايد المجانية
+            </div>
+            <a class="mt-4 inline-flex w-full justify-center px-4 py-3 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition font-bold"
+               href="https://t.me/ayedacadmeybot" target="_blank" rel="noopener">
+              فتح البوت
+            </a>
+          </div>
+          <div class="p-5 rounded-2xl bg-black/40 border border-white/10">
+            <div class="font-extrabold">📩 للاستفسار والاشتراك</div>
+            <div class="text-sm text-white/70 mt-2">
+              تواصل مباشر مع الحساب الرسمي:
+              <a class="text-[var(--yellow)] font-bold" href="https://t.me/Ayed_Academy_2026" target="_blank" rel="noopener">@Ayed_Academy_2026</a>
+            </div>
+            <a href="#register" class="mt-4 inline-flex w-full justify-center px-4 py-3 rounded-2xl bg-[var(--yellow)] text-black font-extrabold hover:opacity-90 transition">
+              سجّل الآن
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-4 py-8">
+        <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between">
+          <div class="text-sm text-white/60">
+            © 2026 أكاديمية عايد — جميع الحقوق محفوظة
+          </div>
+          <div class="text-sm text-white/60 flex gap-4">
+            <a class="hover:text-white" href="#pricing">الدفع</a>
+            <a class="hover:text-white" href="#register">التسجيل</a>
+            <a class="hover:text-white" href="#faq">الأسئلة الشائعة</a>
+          </div>
+        </div>
+        <div class="mt-4 text-xs text-white/45 leading-relaxed">
+          تنبيه: هذه الصفحة للتنظيم والتوثيق. تفعيل الاشتراك يتم بعد تأكيد الإيصال من الحساب الرسمي.
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Toast container for notifications -->
+  <div class="toast" id="toast"></div>
+  <!-- Application script -->
+  <script src="script.js"></script>
+</body>
+</html>
